@@ -3,3 +3,24 @@ helloWorld:
   replicas: 2
   port: 8080
   imagePullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  hosts:
+    - host: prd.luisbianconi.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: helloworld-tls
+      hosts:
+        - prd.luisbianconi.com
