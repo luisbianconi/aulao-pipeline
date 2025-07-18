@@ -1,5 +1,6 @@
 # Chart.yaml
 apiVersion: v2
-name: random-logger
-description: A Helm chart for random-logger
+name: helloworld-docker
+description: A Helm chart for Hello World Go application
 version: 0.1.0
+appVersion: "16ef00f"
