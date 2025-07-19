@@ -1,5 +1,5 @@
 helloWorld:
-  image: luisbianconi/hello-world-go:97dcb85
+  image: luisbianconi/hello-world-go:c9b2183
   replicas: 2
   port: 8080
   imagePullPolicy: Always
@@ -14,13 +14,9 @@ ingress:
   className: "nginx"
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
   hosts:
-    - host: prd.luisbianconi.com
+    - host: dev.luisbianconi.com
       paths:
         - path: /
           pathType: Prefix
-  tls:
-    - secretName: helloworld-tls
-      hosts:
-        - prd.luisbianconi.com
+  tls: []
