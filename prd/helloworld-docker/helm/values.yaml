@@ -1,5 +1,5 @@
 helloWorld:
-  image: luisbianconi/hello-world-go:60788cc
+  image: luisbianconi/hello-world-go:317aff2
   replicas: 2
   port: 8080
   imagePullPolicy: Always
@@ -14,7 +14,7 @@ ingress:
   className: "nginx"
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: "letsencrypt-dev"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     cert-manager.io/acme-challenge-type: "http01"
