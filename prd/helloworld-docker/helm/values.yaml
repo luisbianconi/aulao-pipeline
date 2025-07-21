@@ -14,7 +14,7 @@ ingress:
   className: "nginx"
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: "letsencrypt-dev"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     cert-manager.io/acme-challenge-type: "http01"
@@ -24,6 +24,6 @@ ingress:
         - path: /
           pathType: Prefix
   tls:
-    - secretName: prd.luisbianconi.com-tls
+    - secretName: prd-luisbianconi-com-tls
       hosts:
         - prd.luisbianconi.com
