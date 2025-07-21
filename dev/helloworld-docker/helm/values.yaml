@@ -1,5 +1,5 @@
 helloWorld:
-  image: luisbianconi/hello-world-go:2eac1e6
+  image: luisbianconi/hello-world-go:60788cc
   replicas: 2
   port: 8080
   imagePullPolicy: Always
